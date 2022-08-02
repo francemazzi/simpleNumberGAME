@@ -107,5 +107,5 @@ btnNewHold.addEventListener('click', function () {
 //   }
 // });
 
-// Dobbiamo dichiarare una ariabiile anonomia, non dobbiamo chiamare la funzione quindi sarà js a farlo!
+
 btnNew.addEventListener('click', init);
