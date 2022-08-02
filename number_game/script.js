@@ -1,7 +1,5 @@
 'use strict';
 
-//Possiamo sintetizare ancora di più il codice inserendo un richiamo alla funzione che chiama il messaggio ogni volta tentiamo ad inserire un numero guess
-
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let highscore = 0;
 let score = 20;
@@ -14,7 +12,7 @@ document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
 
-  //Giocatore non c'è input
+  //Giocatore no input
   if (!guess) {
     displayMessage('Nessun numero! 🥴');
 
@@ -24,14 +22,14 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.number').textContent = secretNumber;
     //Background color cambia se vinci il vaore va sempre messo in ''
     document.querySelector('body').style.backgroundColor = '#60b347';
-    //Ora cambiamo anche la grandezza della scritta che dice che si vince.
+    //Scritta vince
     document.querySelector('.number').style.width = '30rem';
     if (score > highscore) {
       highscore = score;
       document.querySelector('.highscore').textContent = highscore;
     }
 
-    //Quando SBAGLIATO
+    //Se SBAGLIATO
   } else if (guess !== secretNumber) {
     if (score > 1) {
       guess > secretNumber
@@ -46,7 +44,7 @@ document.querySelector('.check').addEventListener('click', function () {
   }
 });
 
-//Creiamo il tasto che inizializza il codice
+//tasto che inizializza il codice
 document.querySelector('.again').addEventListener('click', function () {
   score = 20;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
